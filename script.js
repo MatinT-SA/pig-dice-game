@@ -8,6 +8,8 @@ const player1 = document.querySelector('.player--1');
 const player2 = document.querySelector('.player--2');
 const player1Heading = document.querySelector('.player--1_heading');
 const player2Heading = document.querySelector('.player--2_heading');
+const player1Current = document.querySelector('.player--1_current');
+const player2Current = document.querySelector('.player--2_current');
 
 let currentScore = 0;
 let activePlayer = 1;
@@ -35,10 +37,19 @@ rollBtn.addEventListener('click', function () {
         player1Heading.classList.toggle('heading-active');
         player2Heading.classList.toggle('heading-active');
 
+        if (activePlayer === 1) {
+            player2Current.classList.add('shake');
+        } else {
+            player1Current.classList.add('shake');
+        }
+
+        setTimeout(() => {
+            player1Current.classList.remove('shake');
+            player2Current.classList.remove('shake');
+        }, 500);
 
         // 4- adding a voice like "ouch!" played for the lost player
 
-        // 5- shaking the current section for lost player
 
 
     }
