@@ -52,6 +52,7 @@ body {
 
 .heading {
     margin: 4rem auto 3rem;
+    color: #6b6b6b;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,6 +63,7 @@ body {
 .heading-active {
     text-decoration: overline;
     text-decoration-color: #b60707;
+    color: #272525;
 }
 
 .score {

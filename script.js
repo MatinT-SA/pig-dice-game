@@ -28,14 +28,13 @@ rollBtn.addEventListener('click', function () {
         document.getElementById(`current--${activePlayer}`).textContent = 0;
         currentScore = 0;
         activePlayer = activePlayer === 1 ? 2 : 1;
-        // 1- changing the background color
+
         player1.classList.toggle('active');
         player2.classList.toggle('active');
 
-        // 2- adding overline to the text of new player
         player1Heading.classList.toggle('heading-active');
         player2Heading.classList.toggle('heading-active');
-        // 3- changing the color of text of new player
+
 
         // 4- adding a voice like "ouch!" played for the lost player
 
