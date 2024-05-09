@@ -6,6 +6,8 @@ const current1 = document.querySelector('#current--1');
 const current2 = document.querySelector('#current--2');
 const player1 = document.querySelector('.player--1');
 const player2 = document.querySelector('.player--2');
+const player1Heading = document.querySelector('.player--1_heading');
+const player2Heading = document.querySelector('.player--2_heading');
 
 let currentScore = 0;
 let activePlayer = 1;
@@ -31,7 +33,8 @@ rollBtn.addEventListener('click', function () {
         player2.classList.toggle('active');
 
         // 2- adding overline to the text of new player
-
+        player1Heading.classList.toggle('heading-active');
+        player2Heading.classList.toggle('heading-active');
         // 3- changing the color of text of new player
 
         // 4- adding a voice like "ouch!" played for the lost player

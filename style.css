@@ -40,6 +40,7 @@ body {
 
 .active {
     background: linear-gradient(347deg, rgba(255, 89, 169, 1) 0%, rgba(255, 170, 203, 1) 50%);
+    transition: all 1s ease-in;
 }
 
 .players {
@@ -56,6 +57,11 @@ body {
     align-items: center;
     font-size: 1.7rem;
     text-transform: uppercase;
+}
+
+.heading-active {
+    text-decoration: overline;
+    text-decoration-color: #b60707;
 }
 
 .score {
