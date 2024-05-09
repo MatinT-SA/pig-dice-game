@@ -11,6 +11,9 @@ const player2Heading = document.querySelector('.player--2_heading');
 const player1Current = document.querySelector('.player--1_current');
 const player2Current = document.querySelector('.player--2_current');
 
+// Audio
+const oops = new Audio('Oops.mp3');
+
 let currentScore = 0;
 let activePlayer = 1;
 
@@ -48,9 +51,6 @@ rollBtn.addEventListener('click', function () {
             player2Current.classList.remove('shake');
         }, 500);
 
-        // 4- adding a voice like "ouch!" played for the lost player
-
-
-
+        oops.play();
     }
 });
