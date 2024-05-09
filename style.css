@@ -1,4 +1,6 @@
-/* Resetting style */
+/*✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦*/
+/*═════════════════════╣ Resetting Styles ╠═════════════════════*/
+/*✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦*/
 
 * {
     margin: 0;
@@ -14,11 +16,13 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/* Main */
+/*✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦*/
+/*═════════════════════╣ Main ╠═════════════════════*/
+/*✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦*/
 
 .wrapper {
     width: 1000px;
-    background-color: red;
+    background: linear-gradient(347deg, rgba(160, 99, 130, 1) 0%, rgba(193, 193, 193, 1) 50%);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -35,65 +39,106 @@ body {
 }
 
 .active {
-    background-color: #ccc;
+    background: linear-gradient(347deg, rgba(255, 89, 169, 1) 0%, rgba(255, 170, 203, 1) 50%);
 }
 
 .left-section,
 .right-section {
-    height: 500px;
+    height: 580px;
     width: 50%;
     padding: 2rem;
     float: left;
 }
 
-.left-section__heading {
+.heading {
+    margin: 4rem auto 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 1.7rem;
+    text-transform: uppercase;
 }
 
-.right-section__heading {
+.score {
+    /* The winner's score should turn into green and change dynamically */
+    margin-bottom: 11rem;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.right-section__score,
-.left-section__score {
-    margin-bottom: 15rem;
-}
-
-.left-section__score {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.right-section__score {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-weight: bold;
+    font-size: 3rem;
+    color: #b60707;
+    ;
 }
 
 .current {
     width: 40%;
     margin: 0 auto;
-    background-color: #777;
+    background-color: #b60707;
     color: #fff;
     text-align: center;
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 20px 2px 20px 8px;
+    text-transform: uppercase;
 }
 
-/* Buttons */
+.current-text {
+    font-size: 1.1rem;
+}
+
+.current-value {
+    font-size: 2rem;
+}
+
+/*✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦*/
+/*═════════════════════╣ Buttons ╠═════════════════════*/
+/*✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦*/
 
 .btn {
+    color: #272525;
+    text-decoration: none;
+    border: 2px solid transparent;
+    border-radius: 5px 10px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    background-color: transparent;
+    padding: 1rem 2rem;
+    transition: all .3s ease-in-out;
+    overflow: hidden;
+    cursor: pointer;
     position: absolute;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-    color: black;
-    font-size: 20px;
-    background-color: white;
-    padding: 1rem 3rem;
+    transform: translate(-50%, -50%);
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: -90%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0;
+}
+
+.btn:hover::before {
+    opacity: 1;
+    transform: scale(3);
+}
+
+.btn:hover {
+    transform: translate(-50%, -50%) scale(1.1);
 }
 
 .btn--restart {
@@ -108,9 +153,13 @@ body {
     top: 25rem;
 }
 
-/* Dice */
+/*✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦*/
+/*═════════════════════╣ Dices ╠═════════════════════*/
+/*✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦*/
+
 
 .dice {
+    /* having the possibility for 3 dices */
     position: absolute;
     left: 50%;
     top: 10rem;
