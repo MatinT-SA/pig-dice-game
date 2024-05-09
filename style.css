@@ -42,8 +42,7 @@ body {
     background: linear-gradient(347deg, rgba(255, 89, 169, 1) 0%, rgba(255, 170, 203, 1) 50%);
 }
 
-.left-section,
-.right-section {
+.players {
     height: 580px;
     width: 50%;
     padding: 2rem;
@@ -72,7 +71,7 @@ body {
 }
 
 .current {
-    width: 40%;
+    width: 45%;
     margin: 0 auto;
     background-color: #b60707;
     color: #fff;
