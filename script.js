@@ -16,6 +16,7 @@ const score2 = document.querySelector('#score--2');
 
 // Audio
 const oops = new Audio('Oops.mp3');
+const bgMusic = new Audio('bg-music.mp3');
 
 let scores, currentScore, activePlayer, playing;
 
@@ -93,8 +94,6 @@ holdBtn.addEventListener('click', function () {
         document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer - 1];
         console.log(scores[activePlayer]);
 
-        // 2- check if player's score is => 100
-        // finish the game
         if (scores[activePlayer - 1] >= 20) {
             playing = false;
 
