@@ -40,8 +40,7 @@ body {
 
 .active {
 
-    background: linear-gradient(347deg, rgba(239, 239, 239, 1) 0%, rgba(219, 219, 219, 1) 100%);
-    transition: all 1s ease-in;
+    background: linear-gradient(347deg, rgb(207, 207, 207) 0%, rgb(188, 188, 188) 100%);
 }
 
 .players {
@@ -116,7 +115,7 @@ body {
     font-weight: bold;
     background-color: transparent;
     padding: 1rem 2rem;
-    transition: all .3s ease-in-out;
+    transition: all .3s;
     overflow: hidden;
     cursor: pointer;
     position: absolute;
@@ -149,6 +148,12 @@ body {
 
 .btn:hover {
     transform: translate(-50%, -50%) scale(1.1);
+}
+
+.btn:active {
+    transform: translate(-50%, -50%) translateY(3px);
+    transition: all .03s;
+    /* Adjust the translateY value as needed */
 }
 
 .btn--restart {
