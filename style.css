@@ -195,7 +195,7 @@ body {
 }
 
 /*✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦*/
-/*═════════════════════╣ Animations ╠═════════════════════*/
+/*═════════════════════╣ Shakey ╠═════════════════════*/
 /*✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦*/
 .shake {
     animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
@@ -222,4 +222,50 @@ body {
     80% {
         transform: translate(5px, 5px);
     }
+}
+
+/*✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦*/
+/*═════════════════════╣ Winner ╠═════════════════════*/
+/*✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦*/
+.players--winner {
+    background: rgb(207, 207, 207);
+    animation: changeColor 3s infinite linear;
+}
+
+@keyframes changeColor {
+
+    0%,
+    100% {
+        background: rgb(207, 207, 207);
+    }
+
+    30% {
+        background: rgb(89, 240, 91);
+    }
+
+    60% {
+        background: rgb(138, 238, 140);
+    }
+
+    90% {
+        background: rgb(207, 207, 207);
+    }
+}
+
+
+.players--winner .heading {
+    color: rgb(0, 152, 0);
+    text-decoration: overline underline;
+    text-decoration-thickness: 0.3em;
+    text-underline-offset: .3em;
+    text-decoration-color: rgb(0, 152, 0);
+    font-weight: bold;
+}
+
+.players--winner .score {
+    color: rgb(0, 152, 0);
+}
+
+.players--winner .current {
+    background-color: rgb(0, 152, 0);
 }

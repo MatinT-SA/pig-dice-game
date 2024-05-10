@@ -72,13 +72,16 @@ rollBtn.addEventListener('click', function () {
 });
 
 holdBtn.addEventListener('click', function () {
-    // 1- add current score to active player's score
-    scores[activePlayer] += currentScore;
-    document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer];
+    // subtracting 1 from activePlayer because it starts from 1
+    scores[activePlayer - 1] += currentScore;
+    document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer - 1];
     console.log(scores[activePlayer]);
 
     // 2- check if player's score is => 100
     // finish the game
+    if (scores[activePlayer - 1] >= 20) {
+        document.querySelector(`.player--${activePlayer}`).classList.add('players--winner');
+    }
 
     // 3- switch to the next player
     switchPlayer();
