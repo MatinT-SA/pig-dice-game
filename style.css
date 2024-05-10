@@ -60,6 +60,7 @@ body {
     align-items: center;
     font-size: 1.7rem;
     text-transform: uppercase;
+    transition: all .4s ease-in;
 }
 
 .heading-active {
@@ -259,7 +260,7 @@ body {
     text-decoration-thickness: 0.3em;
     text-underline-offset: .3em;
     text-decoration-color: rgb(0, 152, 0);
-    font-weight: bold;
+    font-size: 2.5rem;
 }
 
 .players--winner .score {

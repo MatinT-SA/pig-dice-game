@@ -20,6 +20,7 @@ const oops = new Audio('Oops.mp3');
 const scores = [0, 0];
 let currentScore = 0;
 let activePlayer = 1;
+let playing = true;
 
 // Switching to the next player function
 const switchPlayer = () => {
@@ -40,49 +41,57 @@ const switchPlayer = () => {
 dice.classList.add('hidden');
 
 rollBtn.addEventListener('click', function () {
-    const diceNumber = Math.trunc(Math.random() * 6) + 1;
+    if (playing) {
+        const diceNumber = Math.trunc(Math.random() * 6) + 1;
 
-    dice.classList.remove('hidden');
-    dice.src = `images/dice-${diceNumber}.png`;
+        dice.classList.remove('hidden');
+        dice.src = `images/dice-${diceNumber}.png`;
 
-    if (diceNumber !== 1) {
-        currentScore += diceNumber;
-        document.getElementById(`current--${activePlayer}`).textContent = currentScore;
-    } else {
-        // shaking the current section for the lost player and removing it after 500ms
-        if (activePlayer === 1) {
-            player1Current.classList.add('shake');
+        if (diceNumber !== 1) {
+            currentScore += diceNumber;
+            document.getElementById(`current--${activePlayer}`).textContent = currentScore;
         } else {
-            player2Current.classList.add('shake');
-        }
-        setTimeout(() => {
-            player1Current.classList.remove('shake');
-            player2Current.classList.remove('shake');
-        }, 500);
-        // playing oops sound
-        oops.play();
-        // scaling up the dice 1
-        dice.classList.add('dice-scaled');
-        setTimeout(() => {
-            dice.classList.remove('dice-scaled');
-        }, 500);
+            // shaking the current section for the lost player and removing it after 500ms
+            if (activePlayer === 1) {
+                player1Current.classList.add('shake');
+            } else {
+                player2Current.classList.add('shake');
+            }
+            setTimeout(() => {
+                player1Current.classList.remove('shake');
+                player2Current.classList.remove('shake');
+            }, 500);
+            // playing oops sound
+            oops.play();
+            // scaling up the dice 1
+            dice.classList.add('dice-scaled');
+            setTimeout(() => {
+                dice.classList.remove('dice-scaled');
+            }, 500);
 
-        switchPlayer();
+            switchPlayer();
+        }
     }
 });
 
 holdBtn.addEventListener('click', function () {
-    // subtracting 1 from activePlayer because it starts from 1
-    scores[activePlayer - 1] += currentScore;
-    document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer - 1];
-    console.log(scores[activePlayer]);
+    if (playing) {
+        // subtracting 1 from activePlayer because it starts from 1
+        scores[activePlayer - 1] += currentScore;
+        document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer - 1];
+        console.log(scores[activePlayer]);
 
-    // 2- check if player's score is => 100
-    // finish the game
-    if (scores[activePlayer - 1] >= 20) {
-        document.querySelector(`.player--${activePlayer}`).classList.add('players--winner');
+        // 2- check if player's score is => 100
+        // finish the game
+        if (scores[activePlayer - 1] >= 20) {
+            playing = false;
+
+            document.querySelector(`.player--${activePlayer}`).classList.add('players--winner');
+            document.querySelector(`.player--${activePlayer}`).classList.remove('active');
+
+            dice.classList.add('hidden');
+        } else {
+            switchPlayer();
+        }
     }
-
-    // 3- switch to the next player
-    switchPlayer();
 })
