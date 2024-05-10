@@ -22,7 +22,7 @@ body {
 
 .wrapper {
     width: 1000px;
-    background: linear-gradient(347deg, rgba(160, 99, 130, 1) 0%, rgba(193, 193, 193, 1) 50%);
+    background: linear-gradient(347deg, rgba(255, 89, 169, 1) 0%, rgba(255, 170, 203, 1) 50%);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -39,7 +39,8 @@ body {
 }
 
 .active {
-    background: linear-gradient(347deg, rgba(255, 89, 169, 1) 0%, rgba(255, 170, 203, 1) 50%);
+
+    background: linear-gradient(347deg, rgba(239, 239, 239, 1) 0%, rgba(219, 219, 219, 1) 100%);
     transition: all 1s ease-in;
 }
 
