@@ -124,8 +124,6 @@ body {
     transform: translate(-50%, -50%);
 }
 
-/* pushing the buttons down visually when getting clicked (focused) */
-
 .btn::before {
     content: '';
     position: absolute;
@@ -182,6 +180,12 @@ body {
     transform: translateX(-50%);
     height: 7rem;
     box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.2);
+    transition: all .5s ease;
+}
+
+.dice-scaled {
+    transform: scale(1.2) translate(-40%, 10%);
+    transition: transform 0.5s ease;
 }
 
 .hidden {

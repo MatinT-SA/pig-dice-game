@@ -52,5 +52,11 @@ rollBtn.addEventListener('click', function () {
         }, 500);
 
         oops.play();
+
+        // giving a distiguishable style to dice 1
+        dice.classList.add('dice-scaled');
+        setTimeout(() => {
+            dice.classList.remove('dice-scaled');
+        }, 500);
     }
 });
