@@ -17,10 +17,7 @@ const score2 = document.querySelector('#score--2');
 // Audio
 const oops = new Audio('Oops.mp3');
 
-const scores = [0, 0];
-let currentScore = 0;
-let activePlayer = 1;
-let playing = true;
+let scores, currentScore, activePlayer, playing;
 
 // Switching to the next player function
 const switchPlayer = () => {
@@ -33,10 +30,25 @@ const switchPlayer = () => {
     // toggling heading-active class for players
     player1Heading.classList.toggle('heading-active');
     player2Heading.classList.toggle('heading-active');
-
-
-
 }
+
+const startOver = () => {
+    scores = [0, 0];
+    currentScore = 0;
+    activePlayer = 1;
+    playing = true;
+
+    score1.textContent = 0;
+    score2.textContent = 0;
+    current1.textContent = 0;
+    current2.textContent = 0;
+    player1.classList.remove('players--winner');
+    player2.classList.remove('players--winner');
+    player1.classList.add('active');
+    player2.classList.remove('active');
+}
+
+startOver();
 
 dice.classList.add('hidden');
 
@@ -94,4 +106,6 @@ holdBtn.addEventListener('click', function () {
             switchPlayer();
         }
     }
-})
+});
+
+restartBtn.addEventListener('click', startOver);
