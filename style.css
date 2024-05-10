@@ -51,6 +51,7 @@ body {
     padding: 2rem;
     float: left;
     overflow: hidden;
+    transition: all .75s;
     /* switching the next player with smooth transition */
 }
 
@@ -195,6 +196,28 @@ body {
 
 .hidden {
     display: none;
+}
+
+/*✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦*/
+/*═════════════════════╣ Audio ╠═════════════════════*/
+/*✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦*/
+#audio-control {
+    cursor: pointer;
+    width: 70px;
+    height: 70px;
+    background: none;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease-in;
+}
+
+#audio-control:hover {
+    transform: scale(1.2) translate(-45%, -48%);
+    position: absolute;
+    top: 20%;
+    left: 50%;
 }
 
 /*✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦*/

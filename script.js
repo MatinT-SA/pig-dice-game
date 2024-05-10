@@ -16,7 +16,18 @@ const score2 = document.querySelector('#score--2');
 
 // Audio
 const oops = new Audio('Oops.mp3');
-const bgMusic = new Audio('bg-music.mp3');
+function toggleAudio() {
+    var audio = document.getElementById("bg-music");
+    var audioControl = document.getElementById("audio-control");
+
+    if (audio.paused) {
+        audio.play();
+        audioControl.src = "images/muted-audio.png";
+    } else {
+        audio.pause();
+        audioControl.src = "images/play-audio.png";
+    }
+}
 
 let scores, currentScore, activePlayer, playing;
 
