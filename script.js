@@ -44,6 +44,25 @@ const switchPlayer = () => {
     player2Heading.classList.toggle('heading-active');
 }
 
+// Popup winner
+const displayWinnerMessage = (winner) => {
+    const popup = document.createElement('div');
+    popup.classList.add('winner-popup');
+    popup.textContent = `The winner is ${winner}`;
+    document.body.appendChild(popup);
+
+    // Force reflow to apply animation
+    popup.offsetHeight;
+
+    popup.classList.add('visible');
+
+    setTimeout(() => {
+        popup.remove();
+    }, 1000); // Change this timeout to 1000 milliseconds
+};
+
+
+
 // Restart
 const startOver = () => {
     scores = [0, 0];
@@ -115,6 +134,7 @@ holdBtn.addEventListener('click', function () {
             document.querySelector(`.player--${activePlayer}`).classList.remove('active');
 
             dice.classList.add('hidden');
+            displayWinnerMessage(`Player ${activePlayer}`);
         } else {
             switchPlayer();
         }
