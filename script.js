@@ -46,12 +46,6 @@ const switchPlayer = () => {
 
 // Restart
 const startOver = () => {
-    var audio = document.getElementById("bg-music");
-    var audioControl = document.getElementById("audio-control");
-
-    audio.pause();
-    audioControl.src = "images/play-audio.png";
-
     scores = [0, 0];
     currentScore = 0;
     activePlayer = 1;
