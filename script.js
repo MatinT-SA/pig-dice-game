@@ -58,7 +58,7 @@ const displayWinnerMessage = (winner) => {
 
     setTimeout(() => {
         popup.remove();
-    }, 3000); // Change this timeout to 1000 milliseconds
+    }, 2000); // Change this timeout to 1000 milliseconds
 };
 
 
