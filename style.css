@@ -362,7 +362,7 @@ body {
     }
 
     .btn--hold {
-        top: 25rem;
+        top: 24rem;
     }
 
     #audio-control {
@@ -370,9 +370,9 @@ body {
         height: 50px;
     }
 
-    /* .heading-active {
-        text-decoration: overline;
-        text-decoration-color: #b60707;
+    .heading-active {
+        border-top: 2px solid #b60707;
+        width: 85%;
         color: #272525;
-    } */
+    }
 }
