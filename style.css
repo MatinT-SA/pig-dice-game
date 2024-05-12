@@ -329,3 +329,45 @@ body {
         opacity: 0;
     }
 }
+
+/* Responsiveness */
+@media (max-width: 500px) {
+    .wrapper {
+        border-radius: 3px;
+    }
+
+    .current {
+        background: none;
+    }
+
+    .btn {
+        padding: 0;
+    }
+
+    .btn::before {
+        background: none;
+    }
+
+    .dice {
+        height: 4rem;
+        border-radius: 15px;
+    }
+
+    .heading {
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+    }
+
+    .btn--roll {
+        top: 20rem;
+    }
+
+    .btn--hold {
+        top: 25rem;
+    }
+
+    #audio-control {
+        width: 50px;
+        height: 50px;
+    }
+}
