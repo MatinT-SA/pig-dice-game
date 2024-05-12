@@ -393,4 +393,9 @@ body {
     .players--winner .current {
         background: none;
     }
+
+    .winner-popup {
+        font-size: 16px;
+        padding: 10px;
+    }
 }
