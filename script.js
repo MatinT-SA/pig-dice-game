@@ -78,6 +78,8 @@ const startOver = () => {
     player2.classList.remove('players--winner');
     player1.classList.add('active');
     player2.classList.remove('active');
+    player1Heading.classList.add('heading-active');
+    player2Heading.classList.remove('heading-active');
 
     dice.classList.add('hidden');
 }

@@ -68,8 +68,8 @@ body {
 }
 
 .heading-active {
-    text-decoration: overline;
-    text-decoration-color: #b60707;
+    border-top: 2px solid #b60707;
+    width: 40%;
     color: #272525;
 }
 
@@ -283,10 +283,9 @@ body {
 
 .players--winner .heading {
     color: rgb(0, 152, 0);
-    text-decoration: overline underline;
-    text-decoration-thickness: 0.3em;
-    text-underline-offset: .3em;
-    text-decoration-color: rgb(0, 152, 0);
+    border-top: 6px solid rgb(0, 152, 0);
+    border-bottom: 6px solid rgb(0, 152, 0);
+    width: 50%;
     font-size: 2.5rem;
 }
 
@@ -370,4 +369,10 @@ body {
         width: 50px;
         height: 50px;
     }
+
+    /* .heading-active {
+        text-decoration: overline;
+        text-decoration-color: #b60707;
+        color: #272525;
+    } */
 }
