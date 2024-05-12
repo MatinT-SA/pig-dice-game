@@ -376,4 +376,21 @@ body {
         width: 85%;
         color: #272525;
     }
+
+    .players--winner .heading {
+        color: rgb(0, 152, 0);
+        border-top: 3px solid rgb(0, 152, 0);
+        border-bottom: 3px solid rgb(0, 152, 0);
+        padding: 0 auto 5px;
+        width: 90%;
+        font-size: 1.2rem;
+    }
+
+    .players--winner .score {
+        color: rgb(0, 152, 0);
+    }
+
+    .players--winner .current {
+        background: none;
+    }
 }
