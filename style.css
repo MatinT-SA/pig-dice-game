@@ -32,66 +32,6 @@ body {
     color: transparent;
 }
 
-.btns--outside__container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-}
-
-.btns--outside {
-    border: 2px solid rgb(0, 162, 255);
-    cursor: pointer;
-    background: rgb(92, 82, 228);
-    padding: .5rem 1rem;
-    color: #272525;
-    border-radius: 2px;
-    font-family: 'Luckiest Guy', sans-serif;
-    font-size: 1rem;
-    text-decoration: none;
-    transition: all .1s ease-in;
-}
-
-.btns--outside:hover {
-    background: rgb(63, 217, 255);
-}
-
-/* Styles for the modal */
-.modal {
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 9999;
-}
-
-.modal-content {
-    background-color: #fff;
-    margin: 20% auto;
-    padding: 20px;
-    border-radius: 5px;
-    width: 80%;
-    max-width: 400px;
-    text-align: center;
-    position: relative;
-}
-
-.modal:target {
-    display: block;
-}
-
-.close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    color: black;
-}
-
 .wrapper {
     max-width: 100%;
     width: 1000px;
@@ -123,7 +63,6 @@ body {
     float: left;
     overflow: hidden;
     transition: all .75s;
-    /* switching the next player with smooth transition */
 }
 
 .heading {
@@ -145,7 +84,6 @@ body {
 }
 
 .score {
-    /* The winner's score should turn into green and change dynamically */
     margin-bottom: 11rem;
     display: flex;
     justify-content: center;
@@ -153,7 +91,6 @@ body {
     font-weight: bold;
     font-size: 3.5rem;
     color: #b60707;
-    ;
 }
 
 .current {
@@ -178,6 +115,10 @@ body {
 
 .current-value {
     font-size: 2rem;
+}
+
+.hidden {
+    display: none;
 }
 
 /*✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦*/
@@ -245,10 +186,33 @@ body {
     top: 31rem;
 }
 
+.btns--outside__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.btns--outside {
+    border: 2px solid rgb(0, 162, 255);
+    cursor: pointer;
+    background: rgb(92, 82, 228);
+    padding: .5rem 1rem;
+    color: #272525;
+    border-radius: 4px;
+    font-family: 'Luckiest Guy', sans-serif;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all .1s ease-in;
+}
+
+.btns--outside:hover {
+    background: rgb(63, 217, 255);
+}
+
 /*✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦*/
 /*═════════════════════╣ Dices ╠═════════════════════*/
 /*✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦*/
-
 
 .dice {
     /* having the possibility for 3 dices */
@@ -267,13 +231,10 @@ body {
     transition: transform 0.5s ease;
 }
 
-.hidden {
-    display: none;
-}
-
 /*✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦*/
 /*═════════════════════╣ Audio ╠═════════════════════*/
 /*✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦*/
+
 #audio-control {
     cursor: pointer;
     width: 70px;
@@ -296,6 +257,7 @@ body {
 /*✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦*/
 /*═════════════════════╣ Shakey ╠═════════════════════*/
 /*✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦*/
+
 .shake {
     animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
 }
@@ -324,8 +286,67 @@ body {
 }
 
 /*✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦*/
+/*═════════════════════╣ Modal ╠═════════════════════*/
+/*✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦*/
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+}
+
+.modal-content {
+    background: linear-gradient(240deg, #b4c1fe, #5f6cff);
+    margin: 10% auto;
+    padding: 2rem;
+    border-radius: 40px 40px 10px 10px;
+    width: 80%;
+    max-width: 550px;
+    text-align: center;
+    position: relative;
+}
+
+.modal-content h2 {
+    color: #272525;
+}
+
+.modal-content hr {
+    border: none;
+    height: 4px;
+    background: #b60707;
+    margin: 10px 0;
+}
+
+.modal-content ul {
+    list-style-type: square;
+}
+
+.modal-content ul li {
+    line-height: 3em;
+    font-size: 16px;
+    text-align: left;
+    color: #272525;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    color: black;
+    font-size: 2.5rem;
+}
+
+
+/*✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦*/
 /*═════════════════════╣ Winner ╠═════════════════════*/
 /*✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦*/
+
 .players--winner {
     background: rgb(207, 207, 207);
     animation: changeColor 3s infinite linear;
@@ -351,7 +372,6 @@ body {
     }
 }
 
-
 .players--winner .heading {
     color: rgb(0, 152, 0);
     border-top: 6px solid rgb(0, 152, 0);
@@ -368,7 +388,10 @@ body {
     background-color: rgb(0, 152, 0);
 }
 
-/* CSS for the winner popup */
+/*✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦*/
+/*═════════════════════╣ Winner Pop up ╠═════════════════════*/
+/*✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦*/
+
 .winner-popup {
     position: fixed;
     top: 50%;
@@ -400,7 +423,10 @@ body {
     }
 }
 
-/* Responsiveness */
+/*✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦*/
+/*═════════════════════╣ Responsiveness ╠═════════════════════*/
+/*✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦*/
+
 @media (max-width: 500px) {
     .wrapper {
         border-radius: 3px;

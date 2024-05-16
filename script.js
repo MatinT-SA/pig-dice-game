@@ -143,3 +143,12 @@ restartBtn.addEventListener('click', startOver);
 
 dice.classList.add('hidden');
 startOver();
+
+// Modal
+function openModal() {
+    document.getElementById('rules').style.display = 'block';
+}
+
+function closeModal() {
+    document.getElementById('rules').style.display = 'none';
+}

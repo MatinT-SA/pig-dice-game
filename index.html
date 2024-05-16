@@ -12,20 +12,24 @@
 <body>
     <div id="rules" class="modal">
         <div class="modal-content">
-            <a href="#" class="close">&times;</a>
+            <span onclick="closeModal()" class="close">&times;</span>
             <h2>Rules of the Pig Dice Game</h2>
-            <p>Objective: Be the first to reach 100 points.</p>
-            <p>Players: Two players take turns.</p>
-            <p>Gameplay: Roll a die, score points, avoid rolling a 1.</p>
-            <p>Winning: Reach or exceed 100 points.</p>
-            <p>Special Rules: Doubles add points, double 1s reset score.</p>
-            <p>Strategy: Decide when to roll and when to hold.</p>
+            <hr>
+            <ul>
+                <li>Objective: Be the first to reach 100 points.</li>
+                <li>Players: Two players take turns.</li>
+                <li>Gameplay: Roll a die, score points, avoid rolling a 1.</li>
+                <li>Winning: Reach or exceed 100 points.</li>
+                <li>Special Rules: Doubles add points, double 1s reset score.</li>
+                <li>Strategy: Decide when to roll and when to hold.</li>
+            </ul>
         </div>
     </div>
 
+
     <h1 class="title">The Pig Dice Game</h1>
     <div class="btns--outside__container">
-        <a href="#rules" class="btns--outside rules">Rules</a>
+        <button onclick="openModal()" class="btns--outside rules">Rules</button>
         <a href="#" class="btns--outside">Change winning threshold</a>
     </div>
 
