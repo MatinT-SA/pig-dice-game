@@ -495,4 +495,18 @@ body {
         font-size: 16px;
         padding: 10px;
     }
+
+    .modal-content {
+        margin: 20% auto;
+    }
+
+    .modal-content ul li {
+        line-height: 2em;
+    }
+}
+
+@media (max-width: 350px) {
+    .modal-content ul li {
+        line-height: 1.5em;
+    }
 }
