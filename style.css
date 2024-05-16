@@ -21,6 +21,77 @@ body {
 /*═════════════════════╣ Main ╠═════════════════════*/
 /*✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦*/
 
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    background: linear-gradient(to right, #80cfe5, #3434e1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.btns--outside__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.btns--outside {
+    border: 2px solid rgb(0, 162, 255);
+    cursor: pointer;
+    background: rgb(92, 82, 228);
+    padding: .5rem 1rem;
+    color: #272525;
+    border-radius: 2px;
+    font-family: 'Luckiest Guy', sans-serif;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all .1s ease-in;
+}
+
+.btns--outside:hover {
+    background: rgb(63, 217, 255);
+}
+
+/* Styles for the modal */
+.modal {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 20% auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+}
+
+.modal:target {
+    display: block;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: black;
+}
+
 .wrapper {
     max-width: 100%;
     width: 1000px;
@@ -29,7 +100,7 @@ body {
     top: 50%;
     left: 50%;
     display: flex;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -45%);
     overflow: hidden;
     border-radius: 10px 30px;
     box-shadow: 0px 7px 20px rgba(0, 0, 0, .6);

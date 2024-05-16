@@ -13,7 +13,6 @@ const player2Current = document.querySelector('.player--2_current');
 const score1 = document.querySelector('#score--1');
 const score2 = document.querySelector('#score--2');
 
-
 // Audio
 const oops = new Audio('Oops.mp3');
 function toggleAudio() {
@@ -61,8 +60,6 @@ const displayWinnerMessage = (winner) => {
     }, 2000); // Change this timeout to 1000 milliseconds
 };
 
-
-
 // Restart
 const startOver = () => {
     scores = [0, 0];
@@ -84,10 +81,7 @@ const startOver = () => {
     dice.classList.add('hidden');
 }
 
-startOver();
-
-dice.classList.add('hidden');
-
+// Roll Button
 rollBtn.addEventListener('click', function () {
     if (playing) {
         const diceNumber = Math.trunc(Math.random() * 6) + 1;
@@ -122,6 +116,7 @@ rollBtn.addEventListener('click', function () {
     }
 });
 
+// Hold Button
 holdBtn.addEventListener('click', function () {
     if (playing) {
         // subtracting 1 from activePlayer because it starts from 1
@@ -143,4 +138,8 @@ holdBtn.addEventListener('click', function () {
     }
 });
 
+// Restart Button
 restartBtn.addEventListener('click', startOver);
+
+dice.classList.add('hidden');
+startOver();
