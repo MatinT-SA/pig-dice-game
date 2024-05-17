@@ -346,50 +346,39 @@ body {
 /*═════════════════════╣ Winning Score ╠═════════════════════*/
 /*✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦*/
 
-#winning-score {
-    /* display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    z-index: 9999; */
-}
-
-.winning-score__content {
-    /* background: linear-gradient(240deg, #b4c1fe, #5f6cff);
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-
-    margin: 10% auto;
-    padding: 2rem;
-    border-radius: 40px 40px 10px 10px;
-    width: 80%;
-    max-width: 550px;
-    text-align: center;
-    position: relative; */
-}
-
 .modal-content label {
     display: block;
-    margin-bottom: 10px;
+    margin: 1rem auto 2rem;
 }
 
 .modal-content input {
     width: 100%;
     padding: 5px;
     margin-bottom: 10px;
+    text-align: center;
+    font-size: 2rem;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
+
+.modal-content input:focus {
+    outline: 2px solid red;
 }
 
 .modal-content button {
     background-color: #4CAF50;
     color: #fff;
-    padding: 5px 10px;
+    padding: 5px 30px;
     border: none;
-    border-radius: 3px;
     cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: .2s ease-in;
+}
+
+.modal-content button:hover {
+    background-color: #17b91d;
 }
 
 
