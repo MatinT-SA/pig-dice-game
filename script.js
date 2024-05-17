@@ -12,6 +12,7 @@ const player1Current = document.querySelector('.player--1_current');
 const player2Current = document.querySelector('.player--2_current');
 const score1 = document.querySelector('#score--1');
 const score2 = document.querySelector('#score--2');
+const changeWinningScoreBtn = document.getElementById('change-winning-score');
 
 // Audio
 const oops = new Audio('Oops.mp3');
@@ -28,7 +29,7 @@ function toggleAudio() {
     }
 }
 
-let scores, currentScore, activePlayer, playing;
+let scores, currentScore, activePlayer, playing, winningThreshold;
 
 // Switching to the next player function
 const switchPlayer = () => {
@@ -66,6 +67,7 @@ const startOver = () => {
     currentScore = 0;
     activePlayer = 1;
     playing = true;
+    winningThreshold = 100;
 
     score1.textContent = 0;
     score2.textContent = 0;
@@ -119,12 +121,10 @@ rollBtn.addEventListener('click', function () {
 // Hold Button
 holdBtn.addEventListener('click', function () {
     if (playing) {
-        // subtracting 1 from activePlayer because it starts from 1
         scores[activePlayer - 1] += currentScore;
         document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer - 1];
-        console.log(scores[activePlayer]);
 
-        if (scores[activePlayer - 1] >= 20) {
+        if (scores[activePlayer - 1] >= winningThreshold) {
             playing = false;
 
             document.querySelector(`.player--${activePlayer}`).classList.add('players--winner');
@@ -141,9 +141,6 @@ holdBtn.addEventListener('click', function () {
 // Restart Button
 restartBtn.addEventListener('click', startOver);
 
-dice.classList.add('hidden');
-startOver();
-
 // Modal
 function openModal() {
     document.getElementById('rules').style.display = 'block';
@@ -152,3 +149,19 @@ function openModal() {
 function closeModal() {
     document.getElementById('rules').style.display = 'none';
 }
+
+// Winning Score
+changeWinningScoreBtn.addEventListener('click', function () {
+    const userInput = prompt("Enter the winning threshold (between 20 and 100):");
+    const inputNumber = parseInt(userInput);
+
+    if (!isNaN(inputNumber) && inputNumber >= 20 && inputNumber <= 100) {
+        winningThreshold = inputNumber;
+        alert(`Winning threshold set to ${winningThreshold}`);
+    } else {
+        alert("Please enter a valid number between 20 and 100.");
+    }
+});
+
+dice.classList.add('hidden');
+startOver();
