@@ -13,6 +13,9 @@ const player2Current = document.querySelector('.player--2_current');
 const score1 = document.querySelector('#score--1');
 const score2 = document.querySelector('#score--2');
 const changeWinningScoreBtn = document.getElementById('change-winning-score');
+const winningScore = document.getElementById('winning-score');
+const promptInput = document.getElementById('prompt-input');
+const promptConfirm = document.getElementById('prompt-confirm');
 
 // Audio
 const oops = new Audio('Oops.mp3');
@@ -30,6 +33,28 @@ function toggleAudio() {
 }
 
 let scores, currentScore, activePlayer, playing, winningThreshold;
+
+// Restart
+const startOver = () => {
+    scores = [0, 0];
+    currentScore = 0;
+    activePlayer = 1;
+    playing = true;
+    winningThreshold = 100;
+
+    score1.textContent = 0;
+    score2.textContent = 0;
+    current1.textContent = 0;
+    current2.textContent = 0;
+    player1.classList.remove('players--winner');
+    player2.classList.remove('players--winner');
+    player1.classList.add('active');
+    player2.classList.remove('active');
+    player1Heading.classList.add('heading-active');
+    player2Heading.classList.remove('heading-active');
+
+    dice.classList.add('hidden');
+}
 
 // Switching to the next player function
 const switchPlayer = () => {
@@ -61,27 +86,6 @@ const displayWinnerMessage = (winner) => {
     }, 2000); // Change this timeout to 1000 milliseconds
 };
 
-// Restart
-const startOver = () => {
-    scores = [0, 0];
-    currentScore = 0;
-    activePlayer = 1;
-    playing = true;
-    winningThreshold = 100;
-
-    score1.textContent = 0;
-    score2.textContent = 0;
-    current1.textContent = 0;
-    current2.textContent = 0;
-    player1.classList.remove('players--winner');
-    player2.classList.remove('players--winner');
-    player1.classList.add('active');
-    player2.classList.remove('active');
-    player1Heading.classList.add('heading-active');
-    player2Heading.classList.remove('heading-active');
-
-    dice.classList.add('hidden');
-}
 
 // Roll Button
 rollBtn.addEventListener('click', function () {
@@ -148,16 +152,28 @@ function openModal() {
 
 function closeModal() {
     document.getElementById('rules').style.display = 'none';
+    document.getElementById('winning-score').style.display = 'none';
 }
 
 // Winning Score
 changeWinningScoreBtn.addEventListener('click', function () {
-    const userInput = prompt("Enter the winning threshold (between 20 and 100):");
+    winningScore.style.display = 'block';
+});
+
+promptInput.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        promptConfirm.click();
+    }
+});
+
+promptConfirm.addEventListener('click', function () {
+    const userInput = promptInput.value;
     const inputNumber = parseInt(userInput);
 
     if (!isNaN(inputNumber) && inputNumber >= 20 && inputNumber <= 100) {
         winningThreshold = inputNumber;
-        alert(`Winning threshold set to ${winningThreshold}`);
+        winningScore.style.display = 'none';
     } else {
         alert("Please enter a valid number between 20 and 100.");
     }
