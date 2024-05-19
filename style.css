@@ -482,8 +482,8 @@ body {
     }
 
     .btn {
-        padding: 0;
-        font-size: 1.2rem;
+        padding: 5px 10px;
+        font-size: 1.1rem;
     }
 
     .btn::before {
