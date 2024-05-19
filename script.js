@@ -161,9 +161,16 @@ holdBtn.addEventListener('click', function () {
 // Restart Button
 restartBtn.addEventListener('click', startOver);
 
-// Modal
+// Modal Rules
 function openModal() {
     document.getElementById('rules').style.display = 'block';
+    promptInput.focus();
+}
+
+// Modal Winning Score
+function openModalWinningScore() {
+    document.getElementById('winning-score').style.display = 'block';
+    promptInput.focus();
 }
 
 function closeModal() {
