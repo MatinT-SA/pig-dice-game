@@ -46,6 +46,7 @@ const startOver = () => {
     activePlayer = 1;
     playing = true;
     winningThreshold = 100;
+    changeWinningScoreBtn.disabled = false;
 
     score1.textContent = 0;
     score2.textContent = 0;
@@ -158,6 +159,9 @@ holdBtn.addEventListener('click', function () {
 
             dice.classList.add('hidden');
             displayWinnerMessage(`Player ${activePlayer}`);
+
+            // Disable the button when the game ends
+            changeWinningScoreBtn.disabled = true;
         } else {
             switchPlayer();
         }
@@ -165,7 +169,10 @@ holdBtn.addEventListener('click', function () {
 });
 
 // Restart Button
-restartBtn.addEventListener('click', startOver);
+restartBtn.addEventListener('click', function () {
+    startOver();
+    changeWinningScoreBtn.disabled = false;
+});
 
 // Modal Rules
 function openModal() {
@@ -177,6 +184,7 @@ function openModal() {
 function openModalWinningScore() {
     document.getElementById('winning-score').style.display = 'block';
     promptInput.focus();
+    promptInput.select();
 }
 
 function closeModal() {
@@ -186,9 +194,12 @@ function closeModal() {
 
 // Winning Score
 changeWinningScoreBtn.addEventListener('click', function () {
-    winningScore.style.display = 'block';
+    if (playing) {
+        openModalWinningScore();
+    }
 });
 
+// Allowing Enter Key for Winning Score
 promptInput.addEventListener('keydown', function (event) {
     if (event.key === 'Enter') {
         event.preventDefault();
