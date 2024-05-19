@@ -54,6 +54,8 @@ const startOver = () => {
     player2Heading.classList.remove('heading-active');
 
     dice.classList.add('hidden');
+
+    displayPopUpScoreChanged(winningThreshold);
 }
 
 // Switching to the next player function
@@ -76,16 +78,30 @@ const displayWinnerMessage = (winner) => {
     popup.textContent = `The winner is ${winner}`;
     document.body.appendChild(popup);
 
-    // Force reflow to apply animation
     popup.offsetHeight;
 
     popup.classList.add('visible');
 
     setTimeout(() => {
         popup.remove();
-    }, 2000); // Change this timeout to 1000 milliseconds
+    }, 2000);
 };
 
+// Displaying Current Score
+const displayPopUpScoreChanged = (score) => {
+    const popup = document.createElement('div');
+    popup.classList.add('winner-popup');
+    popup.textContent = `The Winning Score is ${score}`;
+    document.body.appendChild(popup);
+
+    popup.offsetHeight;
+
+    popup.classList.add('visible');
+
+    setTimeout(() => {
+        popup.remove();
+    }, 2000);
+}
 
 // Roll Button
 rollBtn.addEventListener('click', function () {
@@ -173,7 +189,17 @@ promptConfirm.addEventListener('click', function () {
 
     if (!isNaN(inputNumber) && inputNumber >= 20 && inputNumber <= 100) {
         winningThreshold = inputNumber;
+
+        scores = [0, 0];
+        currentScore = 0;
+        activePlayer = 1;
+        score1.textContent = 0;
+        score2.textContent = 0;
+        current1.textContent = 0;
+        current2.textContent = 0;
+
         winningScore.style.display = 'none';
+        displayPopUpScoreChanged(winningThreshold);
     } else {
         alert("Please enter a valid number between 20 and 100.");
     }
