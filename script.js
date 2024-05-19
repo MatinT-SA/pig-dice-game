@@ -34,6 +34,11 @@ function toggleAudio() {
 
 let scores, currentScore, activePlayer, playing, winningThreshold;
 
+// Focusing winningScoreBtn
+function setFocusOnWinningThresholdButton() {
+    changeWinningScoreBtn.focus();
+}
+
 // Restart
 const startOver = () => {
     scores = [0, 0];
@@ -56,6 +61,7 @@ const startOver = () => {
     dice.classList.add('hidden');
 
     displayPopUpScoreChanged(winningThreshold);
+    setFocusOnWinningThresholdButton();
 }
 
 // Switching to the next player function
