@@ -14,6 +14,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    cursor: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="%233DFF09" stroke="%23009C05" stroke-width="2.5" d="M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86a.5.5 0 0 1 .35-.15h6.87a.5.5 0 0 0 .35-.85L6.35 2.85a.5.5 0 0 0-.85.35Z"%3E%3C/path%3E%3C/svg%3E'), auto;
 }
 
 body {
@@ -144,7 +146,6 @@ body {
     padding: 1rem 2rem;
     transition: all .3s;
     overflow: hidden;
-    cursor: pointer;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -201,7 +202,6 @@ body {
 
 .btns--outside {
     border: 2px solid rgb(0, 162, 255);
-    cursor: pointer;
     background: rgb(92, 82, 228);
     padding: .5rem 1rem;
     color: var(--text-color);
@@ -242,7 +242,6 @@ body {
 /*✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦*/
 
 #audio-control {
-    cursor: pointer;
     width: 70px;
     height: 70px;
     background: none;
@@ -343,7 +342,6 @@ body {
     position: absolute;
     top: 10px;
     right: 15px;
-    cursor: pointer;
     color: var(--text-color);
     font-size: 2.5rem;
 }
@@ -377,7 +375,6 @@ body {
     color: #fff;
     padding: 5px 30px;
     border: none;
-    cursor: pointer;
     font-size: 1rem;
     border-radius: 5px;
     transition: .2s ease-in;
