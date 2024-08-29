@@ -18,7 +18,9 @@ const promptInput = document.getElementById('prompt-input');
 const promptConfirm = document.getElementById('prompt-confirm');
 
 // Audio
-const oops = new Audio('Oops.mp3');
+const player1Winner = new Audio('src/Player1.mp3');
+const player2Winner = new Audio('src/Player2.mp3');
+const oops = new Audio('src/Oops.mp3');
 function toggleAudio() {
     var audio = document.getElementById("bg-music");
     var audioControl = document.getElementById("audio-control");
@@ -162,6 +164,9 @@ holdBtn.addEventListener('click', function () {
 
             // Disable the button when the game ends
             changeWinningScoreBtn.disabled = true;
+
+            // Winning Audio
+            activePlayer === 1 ? player1Winner.play() : player2Winner.play();
         } else {
             switchPlayer();
         }
